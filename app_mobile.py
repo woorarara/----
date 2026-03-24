@@ -605,8 +605,8 @@ with st.expander("⚙️ 검색 및 필터 설정", expanded=not st.session_stat
         unsafe_allow_html=True,
     )
     price_min, price_max = st.slider(
-        "가격 범위 (만원)", min_value=0, max_value=500,
-        value=(0, 300), step=5, format="%d만원",
+        "가격 범위 (만원)", min_value=0, max_value=10000,
+        value=(0, 10000), step=100, format="%d만원",
     )
 
     st.markdown("---")

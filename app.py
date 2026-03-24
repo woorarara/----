@@ -623,6 +623,9 @@ with st.sidebar:
         "가격 범위 (만원)", min_value=0, max_value=10000,
         value=(0, 10000), step=100, format="%d만원",
     )
+    def _fmt_price(v: int) -> str:
+        return "1억원" if v >= 10000 else f"{v:,}만원"
+    st.caption(f"선택 범위: {_fmt_price(price_min)} ~ {_fmt_price(price_max)}")
 
     st.markdown("---")
     st.markdown("### 🔽 화면 정렬")
